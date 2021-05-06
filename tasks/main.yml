@@ -4,10 +4,8 @@
 - name: system packages | install sudo
   become: true
   yum:
-    pkg: "{{ item }}"
+    pkg: ['sudo']
     state: present
-  with_items:
-    - sudo
 
 - name: sudo | enable sudoers.d
   become: true
