@@ -3,7 +3,7 @@
 
 - name: system packages | install sudo
   become: true
-  yum:
+  ansible.builtin.dnf:
     pkg: ['sudo']
     state: present
 
