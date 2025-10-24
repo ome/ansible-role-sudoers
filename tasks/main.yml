@@ -9,7 +9,7 @@
 
 - name: sudo | enable sudoers.d
   become: true
-  lineinfile:
+  ansible.builtin.lineinfile:
     backup: true
     dest: /etc/sudoers
     line: '#includedir /etc/sudoers.d'
@@ -18,7 +18,7 @@
 
 - name: sudo | setup individual users and commands
   become: true
-  template:
+  ansible.builtin.template:
     src: sudoers-individual_commands.j2
     dest: /etc/sudoers.d/sudoers-individual_commands
     backup: false
